@@ -183,12 +183,9 @@ const CONFIG = {
   marca: "GIFF Mediação de Negócios",
   logo: "https://i.postimg.cc/KckqFtJ3/Gemini-Generated-Image-tpsguutpsguutpsg.jpg",
 
-       // URL do seu app do Apps Script...
-  appScriptUrl: "https://script.google.com/macros/s/SEU_ID_AQUI/exec",
-
   // URL do seu app do Apps Script (Implantar > Nova implantação > App da Web).
   // Cole a URL que termina em /exec entre as aspas:
-  appScriptUrl: "",
+  appScriptUrl: "https://script.google.com/a/macros/rodopar.ind.br/s/AKfycbwtPisGLYCM5s9q7cu_LU8TVdCwGNN1uvPJ2GTcDhIxDKrV5RPrbHARCs-urtIoUGTPLA/exec",
 
   // POSTAGENS / GALERIA DE IMAGENS
   // Para publicar: adicione um bloco { ... } no início da lista e salve o arquivo no GitHub.
@@ -465,7 +462,9 @@ if (url.startsWith("https://script.google.com")) {
   simShell.innerHTML =
     '<div class="sim-bar"><span>Calculadora do consultor</span>' +
     '<a href="' + url + '" target="_blank" rel="noopener">Abrir em nova aba</a></div>' +
-    '<iframe id="simFrame" src="' + url + '" title="Simulador de consórcio" loading="lazy"></iframe>';
+    '<iframe id="simFrame" src="' + url + '" title="Simulador de consórcio" loading="lazy"></iframe>' +
+    '<div class="sim-setup" style="padding:16px 18px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)">' +
+    'Se o campo acima aparecer vazio ou pedir login, use o link "Abrir em nova aba".</div>';
 } else {
   simShell.innerHTML =
     '<div class="sim-setup">' +
