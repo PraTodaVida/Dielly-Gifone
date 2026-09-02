@@ -1,1 +1,962 @@
-iniciar
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialista em Consórcios | Conquiste seu Imóvel, Veículo e Investimentos</title>
+    <meta name="description" content="Planeje a compra do seu imóvel, carro, caminhão ou serviço sem juros bancários. Simule online e fale com um especialista em consórcio agora mesmo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            dark: '#0a192f',
+                            navy: '#0f172a',
+                            accent: '#f59e0b',
+                            gold: '#fbbf24'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Outfit"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-emerald-700 via-teal-800 to-emerald-900 text-white text-xs md:text-sm py-2 px-4 text-center font-medium shadow-inner">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+            <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            </span>
+            <span>Taxas promocionais e grupos em andamento com lances reduzidos este mês!</span>
+            <a href="#simulador" class="underline font-bold hover:text-amber-200 transition ml-1">Simular agora →</a>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-emerald-600/30 group-hover:scale-105 transition duration-300">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-heading font-extrabold tracking-tight text-white block leading-none">
+                            CONSÓRCIO<span class="text-emerald-400">PRIME</span>
+                        </span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block mt-1">
+                            Consultoria Especializada
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#segmentos" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition">Modalidades</a>
+                    <a href="#simulador" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition">Simulador</a>
+                    <a href="#vantagens" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition">Por que Consórcio?</a>
+                    <a href="#como-funciona" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition">Como Funciona</a>
+                    <a href="#depoimentos" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition">Depoimentos</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition">Dúvidas</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20consórcio." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-header inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-900/40 transition duration-300 hover:scale-105">
+                        <i class="fa-brands fa-whatsapp text-lg text-emerald-100"></i>
+                        <span>Falar com Consultor</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#segmentos" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Modalidades</a>
+            <a href="#simulador" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Simulador de Crédito</a>
+            <a href="#vantagens" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Por que Consórcio?</a>
+            <a href="#como-funciona" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Como Funciona</a>
+            <a href="#depoimentos" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Depoimentos</a>
+            <a href="#faq" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Perguntas Frequentes</a>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20consórcio." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl shadow-lg mt-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Chamar no WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
+        <!-- Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column (Copy) -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 text-emerald-400 text-xs sm:text-sm font-semibold shadow-inner">
+                        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                        <span>Autorizado & Fiscalizado pelo Banco Central (BACEN)</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight tracking-tight">
+                        Conquiste seu patrimônio <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">
+                            sem pagar juros abusivos.
+                        </span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Planeje a compra da sua casa, apartamento, carro novo, maquinário ou alavancagem financeira com parcelas que cabem no seu bolso e estratégias de contemplação rápida por lance.
+                    </p>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-2 pb-2 max-w-lg mx-auto lg:mx-0 border-y border-slate-800/80 py-4">
+                        <div class="text-center lg:text-left">
+                            <span class="block text-2xl sm:text-3xl font-bold font-heading text-emerald-400">0%</span>
+                            <span class="text-xs text-slate-400">Juros de Financiamento</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block text-2xl sm:text-3xl font-bold font-heading text-amber-400">+ R$ 80M</span>
+                            <span class="text-xs text-slate-400">Créditos Comercializados</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block text-2xl sm:text-3xl font-bold font-heading text-teal-400">+1.500</span>
+                            <span class="text-xs text-slate-400">Clientes Contemplados</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#simulador" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-emerald-900/30 transition duration-300 hover:scale-[1.02]">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                            <span>Fazer Simulação Grátis</span>
+                        </a>
+                        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20uma%20consultoria%20gratuita%20de%20consórcio." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-7 py-4 rounded-xl transition duration-300">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Falar com Especialista</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column (Quick Highlight Card) -->
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <!-- Decorative glow -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+
+                        <div class="relative bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                            <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                                        <i class="fa-solid fa-gem"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-base font-bold text-white">Por que o Consórcio?</h2>
+                                        <p class="text-xs text-slate-400">Inteligência Financeira</p>
+                                    </div>
+                                </div>
+                                <span class="bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-emerald-500/20">
+                                    Sem Juros
+                                </span>
+                            </div>
+
+                            <ul class="space-y-4 my-6">
+                                <li class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white text-sm block">Poder de Compra à Vista</strong>
+                                        <span class="text-xs text-slate-400">Na contemplação, você negocia descontos como se estivesse pagando em dinheiro.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white text-sm block">Uso do FGTS para Imóveis</strong>
+                                        <span class="text-xs text-slate-400">Utilize seu saldo de FGTS para ofertar lances ou abater parcelas.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white text-sm block">Lance Embutido</strong>
+                                        <span class="text-xs text-slate-400">Use até 30% da própria carta para acelerar sua contemplação sem tirar do bolso.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white text-sm block">Construção de Patrimônio</strong>
+                                        <span class="text-xs text-slate-400">Excelente ferramenta para aluguel, revenda de cartas ou aposentadoria imobiliária.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/50 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-sm">
+                                        CP
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-semibold text-white block">Atendimento Dedicado</span>
+                                        <span class="text-[11px] text-emerald-400 flex items-center gap-1">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                            Consultores Online
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="#simulador" class="text-xs font-bold text-slate-200 hover:text-emerald-400 flex items-center gap-1">
+                                    Simular <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segmentos / Modalidades Section -->
+    <section id="segmentos" class="py-20 bg-slate-900/60 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Planos Sob Medida</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2 mb-4">
+                    Qual é o seu próximo objetivo?
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Trabalhamos com as maiores administradoras do país para oferecer os melhores grupos, prazos e taxas do mercado.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Imóveis -->
+                <div class="segment-card group bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-2">Consórcio Imobiliário</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Casas, apartamentos, terrenos, construção, reformas ou quitação de financiamento imobiliário.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Cartas de R$ 100 mil a R$ 2 Milhões</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Prazos de até 240 meses</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Aceita uso do saldo de FGTS</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectSimulatorSegment('imovel')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white text-sm font-semibold transition">
+                        Simular Imóvel
+                    </button>
+                </div>
+
+                <!-- Automóveis & Motos -->
+                <div class="segment-card group bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-teal-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-2">Automóveis & Motos</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Carros novos, seminovos, importados ou motos. Liberdade de escolher qualquer marca ou modelo.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Cartas de R$ 30 mil a R$ 300 mil</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Prazos de 36 a 100 meses</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Sem taxa de adesão abusiva</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectSimulatorSegment('auto')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-teal-600 text-slate-200 hover:text-white text-sm font-semibold transition">
+                        Simular Veículo
+                    </button>
+                </div>
+
+                <!-- Pesados & Agronegócio -->
+                <div class="segment-card group bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-950/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-2">Pesados & Agro</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Caminhões, carretas, tratores, colheitadeiras, maquinários industriais e energia solar fotovoltaica.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Cartas de R$ 150 mil a R$ 1,5 Milhão</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Renovação e ampliação de frota</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Planejamento para safras</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectSimulatorSegment('pesados')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-amber-600 text-slate-200 hover:text-white text-sm font-semibold transition">
+                        Simular Pesados
+                    </button>
+                </div>
+
+                <!-- Serviços & Investimentos -->
+                <div class="segment-card group bg-slate-900 border border-slate-800 hover:border-purple-500/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-950/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-2">Serviços & Investimentos</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Procedimentos médicos, viagens, intercâmbio, eventos, reformas ou alavancagem patrimonial lucrativa.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Cartas de R$ 15 mil a R$ 60 mil</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Prazos rápidos de 24 a 48 meses</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Sem descapitalizar sua reserva</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectSimulatorSegment('servicos')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white text-sm font-semibold transition">
+                        Simular Serviços
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SIMULATOR SECTION -->
+    <section id="simulador" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Simulador 100% Online</span>
+                <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white mt-2 mb-4">
+                    Simule seu Consórcio em Segundos
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Escolha a modalidade, defina o valor do crédito desejado e descubra uma estimativa de parcela perfeita para você.
+                </p>
+            </div>
+
+            <!-- Simulator Container -->
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <!-- Decorative elements -->
+                <div class="absolute top-0 right-0 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Segment Selector Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-10">
+                    <button type="button" data-segment="imovel" class="segment-tab active px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition duration-200 border border-slate-700 bg-slate-800 text-slate-300">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Imóveis</span>
+                    </button>
+                    <button type="button" data-segment="auto" class="segment-tab px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition duration-200 border border-slate-700 bg-slate-800 text-slate-300">
+                        <i class="fa-solid fa-car"></i>
+                        <span>Veículos</span>
+                    </button>
+                    <button type="button" data-segment="pesados" class="segment-tab px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition duration-200 border border-slate-700 bg-slate-800 text-slate-300">
+                        <i class="fa-solid fa-truck"></i>
+                        <span>Pesados & Agro</span>
+                    </button>
+                    <button type="button" data-segment="servicos" class="segment-tab px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition duration-200 border border-slate-700 bg-slate-800 text-slate-300">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <span>Serviços</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <!-- Controls (Sliders) -->
+                    <div class="lg:col-span-7 space-y-8">
+                        <!-- Value Slider -->
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <label for="creditRange" class="text-sm font-semibold text-slate-300">Valor do Crédito (Carta)</label>
+                                <span id="creditValueDisplay" class="text-2xl font-bold font-heading text-emerald-400">R$ 200.000</span>
+                            </div>
+                            <input type="range" id="creditRange" min="50000" max="1000000" step="10000" value="200000" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                            <div class="flex justify-between text-xs text-slate-500">
+                                <span id="minCreditLabel">R$ 50.000</span>
+                                <span id="maxCreditLabel">R$ 1.000.000+</span>
+                            </div>
+                        </div>
+
+                        <!-- Months Slider -->
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <label for="monthsRange" class="text-sm font-semibold text-slate-300">Prazo de Pagamento</label>
+                                <span id="monthsValueDisplay" class="text-2xl font-bold font-heading text-amber-400">180 meses</span>
+                            </div>
+                            <input type="range" id="monthsRange" min="60" max="240" step="12" value="180" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                            <div class="flex justify-between text-xs text-slate-500">
+                                <span id="minMonthsLabel">60 meses (5 anos)</span>
+                                <span id="maxMonthsLabel">240 meses (20 anos)</span>
+                            </div>
+                        </div>
+
+                        <!-- Plan Type Toggle (Reduzida vs Integral) -->
+                        <div class="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="text-left">
+                                <span class="text-sm font-semibold text-white block">Opção de Parcela Reduzida</span>
+                                <span class="text-xs text-slate-400">Pague parcela menor até ser contemplado por sorteio ou lance.</span>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="reducedInstallmentToggle" class="sr-only peer">
+                                <div class="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Result Summary Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-b from-slate-800/90 to-slate-900 border-2 border-emerald-500/40 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                            <span class="absolute -top-3 right-6 bg-emerald-500 text-slate-950 font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                                Simulação Estimada
+                            </span>
+
+                            <div class="text-center pb-6 border-b border-slate-700/60">
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Parcela Mensal a partir de</span>
+                                <div class="text-4xl sm:text-5xl font-extrabold font-heading text-white tracking-tight" id="estimatedInstallmentDisplay">
+                                    R$ 1.333<span class="text-lg text-slate-400 font-normal">/mês</span>
+                                </div>
+                                <span id="installmentTypeBadge" class="inline-block mt-2 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                    Parcela Integral Estimada
+                                </span>
+                            </div>
+
+                            <div class="py-4 space-y-3 text-xs sm:text-sm">
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Segmento Selecionado:</span>
+                                    <strong class="text-white" id="summarySegment">Imóveis</strong>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Crédito Escolhido:</span>
+                                    <strong class="text-emerald-400" id="summaryCredit">R$ 200.000</strong>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Prazo:</span>
+                                    <strong class="text-white" id="summaryMonths">180 meses</strong>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Taxa de Juros:</span>
+                                    <strong class="text-emerald-400 font-bold">0% (Isento de Juros)</strong>
+                                </div>
+                            </div>
+
+                            <!-- Action button -->
+                            <div class="pt-4">
+                                <a id="sendSimulationWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 px-6 rounded-xl shadow-lg shadow-emerald-500/20 transition duration-300 hover:scale-[1.02] text-sm sm:text-base">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    <span>Receber Proposta no WhatsApp</span>
+                                </a>
+                                <p class="text-[11px] text-center text-slate-400 mt-2">
+                                    Simulação sem compromisso. Resposta imediata de um consultor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARATIVO: Consórcio vs Financiamento -->
+    <section id="vantagens" class="py-20 bg-slate-900/70 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Economia Real</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2 mb-4">
+                    Consórcio vs. Financiamento Bancário
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Veja por que pessoas inteligentes financeiramente escolhem o consórcio em vez de pagar até 3 vezes o valor do bem em um financiamento.
+                </p>
+            </div>
+
+            <!-- Comparison Table / Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Financiamento (Negativo) -->
+                <div class="bg-slate-950/80 border border-red-500/20 rounded-3xl p-8 relative overflow-hidden">
+                    <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading text-red-400">Financiamento Tradicional</h3>
+                            <span class="text-xs text-slate-400">Custo elevado e juros compostos</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 my-6 text-sm text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-triangle-exclamation text-red-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Juros abusivos</strong>
+                                <span class="text-xs text-slate-400">Você paga até o valor de 2 a 3 bens no final do contrato devido às taxas de juros elevadas.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-triangle-exclamation text-red-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Entrada Obrigatória Alta</strong>
+                                <span class="text-xs text-slate-400">Bancos exigem no mínimo 20% a 30% do valor do bem à vista para aprovação.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-triangle-exclamation text-red-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Burocracia Excessiva</strong>
+                                <span class="text-xs text-slate-400">Análise de crédito rígida com exigência de pontuação de score alta e comprovações complexas.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Consórcio (Positivo) -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-emerald-500/40 rounded-3xl p-8 relative overflow-hidden shadow-2xl">
+                    <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading text-emerald-400">Consórcio Especializado</h3>
+                            <span class="text-xs text-slate-400">Planejamento financeiro inteligente</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 my-6 text-sm text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Taxa Zero de Juros (0%)</strong>
+                                <span class="text-xs text-slate-400">Apenas taxa de administração diluída suavemente em todo o período do plano.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Sem Entrada Obrigatória</strong>
+                                <span class="text-xs text-slate-400">Inicie pagando somente o valor da primeira parcela mensal.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Estratégias de Lance</strong>
+                                <span class="text-xs text-slate-400">Possibilidade de contemplação rápida ofertando lances livres, fixos ou lances embutidos.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Poder de Negociação à Vista</strong>
+                                <span class="text-xs text-slate-400">Com a carta contemplada em mãos, você tem poder total para exigir descontos na hora da compra.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA SECTION -->
+    <section id="como-funciona" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Passo a Passo</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2 mb-4">
+                    Como funciona o Consórcio?
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Um modelo simples, seguro e regulamentado pelo Banco Central do Brasil.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Passo 1 -->
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-sm flex items-center justify-center shadow-lg">1</span>
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mt-4 mb-4">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">1. Escolha seu Plano</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Com auxílio do nosso consultor, você escolhe o valor do crédito e as parcelas que se encaixam no seu orçamento.
+                    </p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-sm flex items-center justify-center shadow-lg">2</span>
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mt-4 mb-4">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">2. Assembleias Mensais</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Todos os meses ocorrem assembleias onde os consorciados concorrem à contemplação através de sorteios da Loteria Federal e lances.
+                    </p>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-sm flex items-center justify-center shadow-lg">3</span>
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mt-4 mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">3. Contemplação</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Ao ser sorteado ou ter o lance vencedor aprovado, sua carta de crédito é liberada para a compra do bem desejado.
+                    </p>
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-sm flex items-center justify-center shadow-lg">4</span>
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mt-4 mb-4">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">4. Aquisição do Bem</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Você adquire o imóvel, automóvel, caminhão ou serviço que escolheu com a força de pagamento à vista.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS SECTION -->
+    <section id="depoimentos" class="py-20 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Histórias Reais</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2 mb-4">
+                    O que dizem nossos clientes contemplados
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Mais do que consórcios, realizamos planos e construímos histórias de sucesso.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Consegui comprar meu apartamento próprio sem ficar preso aos juros altíssimos do banco. O suporte do consultor para traçar a estratégia de lance no 4º mês foi fundamental!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600/30 text-emerald-400 flex items-center justify-center font-bold">
+                            RF
+                        </div>
+                        <div>
+                            <strong class="text-white text-sm block">Rodrigo Ferreira</strong>
+                            <span class="text-xs text-slate-400">Contemplado em Imóvel de R$ 380.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Renovei dois caminhões da minha transportadora usando consórcio de pesados. A assessoria me ajudou a escolher o grupo ideal e fomos contemplados por lance embutido."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-amber-600/30 text-amber-400 flex items-center justify-center font-bold">
+                            MA
+                        </div>
+                        <div>
+                            <strong class="text-white text-sm block">Marcos Aurélio</strong>
+                            <span class="text-xs text-slate-400">Empresário - Frota Pesada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Comprei meu SUV zero km à vista negociando um ótimo desconto com a concessionária. O processo de faturamento da carta foi super ágil e transparente."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-teal-600/30 text-teal-400 flex items-center justify-center font-bold">
+                            CS
+                        </div>
+                        <div>
+                            <strong class="text-white text-sm block">Camila Silveira</strong>
+                            <span class="text-xs text-slate-400">Contemplada em Auto de R$ 130.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (Accordion) -->
+    <section id="faq" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Tire suas Dúvidas</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2 mb-4">
+                    Perguntas Frequentes
+                </h2>
+                <p class="text-slate-400 text-base">
+                    Confira as respostas para as principais questões sobre o consórcio.
+                </p>
+            </div>
+
+            <div class="space-y-4" id="faqAccordion">
+                <!-- Item 1 -->
+                <div class="faq-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden transition">
+                    <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-200 hover:text-emerald-400 transition">
+                        <span>O que é e como funciona o Lance Embutido?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                        O lance embutido permite que você utilize um percentual do valor da sua própria carta de crédito (geralmente até 20% a 30%) como oferta de lance na assembleia. Você não precisa desembolsar dinheiro do seu bolso; o valor é descontado do crédito final na hora do pagamento.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="faq-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden transition">
+                    <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-200 hover:text-emerald-400 transition">
+                        <span>Posso usar o FGTS no consórcio de imóveis?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                        Sim! De acordo com as regras da Caixa e do SFH, você pode usar o seu saldo de FGTS para ofertar lances, amortizar parcelas futuras ou abater o saldo devedor após a contemplação do consórcio imobiliário residencial.
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faq-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden transition">
+                    <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-200 hover:text-emerald-400 transition">
+                        <span>Quanto tempo demora para eu ser contemplado?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                        A contemplação ocorre através de sorteios mensais desde a primeira assembleia até a última do grupo. Caso você tenha urgência, pode acelerar o processo ofertando lances (livre ou embutido). Nós analisamos o histórico do grupo para orientar a melhor estratégia de oferta.
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faq-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden transition">
+                    <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-200 hover:text-emerald-400 transition">
+                        <span>O que acontece com o valor da carta até a contemplação?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                        O valor do seu crédito é atualizado anualmente pelo índice do setor (ex: INCC para imóveis e IPCA/FIPE para automóveis), garantindo que o seu poder de compra continue 100% preservado no momento da aquisição do bem.
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="faq-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden transition">
+                    <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-200 hover:text-emerald-400 transition">
+                        <span>É seguro contratar um consórcio?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+                        Totalmente seguro! O sistema de consórcios no Brasil é regulamentado pela Lei Federal nº 11.795/08 e estritamente fiscalizado pelo Banco Central do Brasil (BACEN). Trabalhamos exclusivamente com administradoras consolidadas e reconhecidas nacionalmente.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONTATO / CAPTURA DE LEADS -->
+    <section id="contato" class="py-20 bg-slate-900/80 border-t border-slate-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-900 border border-slate-700 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Atendimento Exclusivo</span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-white mt-1 mb-2">
+                        Receba uma Consultoria Gratuita
+                    </h2>
+                    <p class="text-slate-400 text-sm">
+                        Preencha o formulário abaixo e receba um estudo detalhado dos melhores grupos e lances disponíveis para o seu perfil.
+                    </p>
+                </div>
+
+                <form id="leadForm" class="space-y-4 max-w-lg mx-auto">
+                    <div>
+                        <label for="nameInput" class="block text-xs font-semibold text-slate-300 mb-1">Seu Nome Completo</label>
+                        <input type="text" id="nameInput" required placeholder="Ex: Carlos Eduardo Silva" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition text-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="phoneInput" class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp com DDD</label>
+                            <input type="tel" id="phoneInput" required placeholder="(11) 99999-9999" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition text-sm">
+                        </div>
+                        <div>
+                            <label for="segmentSelect" class="block text-xs font-semibold text-slate-300 mb-1">Modalidade Desejada</label>
+                            <select id="segmentSelect" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition text-sm">
+                                <option value="Imóvel">Consórcio Imobiliário</option>
+                                <option value="Veículo">Consórcio de Carro / Moto</option>
+                                <option value="Pesados / Agro">Pesados & Agronegócio</option>
+                                <option value="Serviços / Investimentos">Serviços & Investimentos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="valueGoalInput" class="block text-xs font-semibold text-slate-300 mb-1">Valor do Crédito Desejado (Aproximado)</label>
+                        <input type="text" id="valueGoalInput" placeholder="Ex: R$ 250.000" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition text-sm">
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold py-4 rounded-xl shadow-lg shadow-emerald-900/30 transition duration-300 hover:scale-[1.01] flex items-center justify-center gap-2 text-base mt-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Solicitar Estudo Personalizado</span>
+                    </button>
+                    
+                    <p class="text-[11px] text-center text-slate-500">
+                        <i class="fa-solid fa-lock text-[10px] mr-1"></i> Seus dados estão seguros e não enviamos spam.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Coluna 1 -->
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-chart-line text-sm"></i>
+                        </div>
+                        <span class="text-lg font-heading font-extrabold text-white">CONSÓRCIO<span class="text-emerald-400">PRIME</span></span>
+                    </a>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Especialistas em consultoria e planejamento de consórcios para aquisição patrimonial sem juros.
+                    </p>
+                </div>
+
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm">Modalidades</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#simulador" class="hover:text-emerald-400 transition">Consórcio Imobiliário</a></li>
+                        <li><a href="#simulador" class="hover:text-emerald-400 transition">Consórcio de Veículos</a></li>
+                        <li><a href="#simulador" class="hover:text-emerald-400 transition">Pesados & Linha Agrícola</a></li>
+                        <li><a href="#simulador" class="hover:text-emerald-400 transition">Serviços e Cirurgias</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm">Navegação</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#segmentos" class="hover:text-emerald-400 transition">Segmentos</a></li>
+                        <li><a href="#simulador" class="hover:text-emerald-400 transition">Simulador Online</a></li>
+                        <li><a href="#vantagens" class="hover:text-emerald-400 transition">Consórcio x Financiamento</a></li>
+                        <li><a href="#como-funciona" class="hover:text-emerald-400 transition">Como Funciona</a></li>
+                        <li><a href="#faq" class="hover:text-emerald-400 transition">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4 -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm">Atendimento</h4>
+                    <p class="mb-2">Segunda a Sexta: 08h às 19h</p>
+                    <p class="mb-4">Sábados: 09h às 14h</p>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20atendimento." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-bold">
+                        <i class="fa-brands fa-whatsapp"></i> (11) 99999-9999
+                    </a>
+                </div>
+            </div>
+
+            <!-- Disclaimer BACEN -->
+            <div class="pt-8 border-t border-slate-900 text-slate-500 text-[11px] leading-relaxed text-center space-y-2">
+                <p>
+                    <strong>Aviso Legal:</strong> O consórcio é regulamentado pela Lei Federal nº 11.795/08 e fiscalizado pelo Banco Central do Brasil (BACEN). As contemplações ocorrem exclusivamente por sorteio ou lances homologados em assembleia. Este site é um canal de consultoria e intermediação de vendas autorizado.
+                </p>
+                <p>© <span id="currentYear">2026</span> Consórcio Prime Consultoria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a id="floatingWhatsApp" href="https://wa.me/5511999999999?text=Olá!%20Estou%20no%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida%20sobre%20consórcio." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 group flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl shadow-emerald-500/40 transition-all duration-300 hover:scale-110" aria-label="Falar no WhatsApp">
+        <div class="relative flex items-center justify-center text-2xl sm:text-2xl text-slate-950">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-900 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+            </span>
+        </div>
+        <div class="hidden sm:flex flex-col text-left leading-tight">
+            <span class="text-[10px] uppercase font-extrabold tracking-wider text-emerald-950">Consultor Online</span>
+            <span class="text-xs font-bold text-slate-950">Fale pelo WhatsApp</span>
+        </div>
+    </a>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
